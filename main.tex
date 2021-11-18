@@ -1,0 +1,112 @@
+% Copyright Javier Sánchez-Monedero.
+% Please report bugs and suggestions to (jsanchezm at uco.es)
+% Modified by Arif Nurwidyantoro 
+%
+% This document is released under a Creative Commons Licence 
+% CC-BY-SA (http://creativecommons.org/licenses/by-sa/3.0/) 
+%
+% BASIC INSTRUCTIONS: 
+% 1. Load and set up proper language packages
+% 2. Complete the paper data commands
+% 3. Use commands \rcomment and \newtext as shown in the example
+
+\documentclass[a4paper,twoside,11pt]{reviewresponse}
+
+% 1. Load and set up proper language packages
+\usepackage[utf8x]{inputenc}
+% \usepackage[latin9]{inputenc}
+\usepackage[T1]{fontenc}
+% \usepackage[english]{babel}
+\usepackage[sfdefault]{biolinum}  
+\usepackage{enumitem}
+
+% 2. Complete the paper data
+\newcommand{\myAuthors}{{John.~Doe$^{\displaystyle 1}$, ~Foo~B.~Bar$^{\displaystyle 2}$, } \\ {~Peter Sanchez$^{\displaystyle 2}$}}
+\newcommand{\myAuthorsShort}{John.~Doe et. al}
+\newcommand{\myEmail}{john@uco.es}
+\newcommand{\myTitle}{The Title of the Paper}
+\newcommand{\myShortTitle}{Response to reviewers}
+\newcommand{\myJournal}{The Journal Name}
+\newcommand{\myDept}{{$^{\displaystyle 1}$Department of Computer Science and Numerical Analysis, University of C\'{o}rdoba, C\'{o}rdoba 14074, Spain. \\ \url{http://www.uco.es/ayrna/}}\\
+{$^{\displaystyle 2}$School of Computer Science, The University of XXX. }\\}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage[linktoc=all, hidelinks]{hyperref}
+% \usepackage[linktoc=all,bookmarks,bookmarksopen=true,bookmarksnumbered=true]{hyperref}
+\usepackage{titletoc}
+\usepackage{etoolbox}
+\usepackage{color}
+\usepackage{xspace}
+\usepackage[hyphens]{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{xspace}
+\usepackage{colortbl}
+\usepackage[center]{caption}
+\usepackage{hhline}
+\usepackage{multirow}
+\usepackage{ragged2e}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{cleveref}
+\newcolumntype{P}[1]{>{\RaggedRight\hspace{0pt}}p{#1}}
+\usepackage{fontawesome}
+\usepackage{pdflscape}
+\usepackage{afterpage}
+\usepackage{geometry}
+\usepackage[framemethod=tikz]{mdframed}
+%\usepackage{subfigure}
+\usepackage{subcaption}
+\usepackage{cleveref}
+% \hypersetup{
+% pdfauthor = {\myAuthorsShort},
+% pdftitle = {\myTitle},
+% pdfsubject = {\myJournal\xspace},
+% colorlinks = true,
+% linkcolor=black!70!green,          % color of internal links
+% citecolor=black!70!green,        % color of links to bibliography
+% filecolor=magenta,      % color of file links
+% urlcolor=black!70!green           % color of external links
+% }
+
+\newtheorem{definition}{Definition}[section]
+\renewcommand{\thedefinition}{\arabic{definition}}
+
+\begin{document}
+
+\thispagestyle{plain}
+
+\begin{center}
+ {\LARGE\myTitle} \vspace{0.5cm} \\
+ {\large\myJournal} \vspace{0.5cm} \\
+ {\Large Response to Reviewers} \vspace{0.5cm} \\
+%  \today \vspace{0.5cm} \\
+%  \myAuthors \\
+%  \url{\myEmail} \vspace{1cm} \\
+%  \myDept
+\end{center}
+
+\titlecontents{section}[0em]
+{\vskip 0.5ex}%
+{\scshape}% numbered sections formattin
+{\itshape}% unnumbered sections formatting
+{}%
+
+\tableofcontents
+
+% \begin{abstract}
+%  We thank the anonymous Reviewers for their efforts and feedback.
+% \end{abstract}
+\input{comments}
+
+\input{reviewers/editor}
+\input{reviewers/reviewer-1} 
+\input{reviewers/reviewer-2}
+
+% Uncomment in case references are needed
+% \bibliographystyle{bibstyles/elsarticle-num}
+\bibliographystyle{unsrt}
+\bibliography{main.bib}
+
+\end{document}

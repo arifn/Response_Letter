@@ -1,0 +1,27 @@
+ \newtoggle{draft}
+ \toggletrue{draft}
+ % \togglefalse{draft}
+ \iftoggle{draft}
+ {
+	\newcommand{\idea}[1]{{ \textcolor{black}{\textit{#1}}\xspace}}
+	\newcommand{\todo}[1]{{\textcolor{red}{TODO: \textbf{#1}}\xspace}}
+	\newcommand{\jon}[1]{{\textcolor{red}{Jon: #1}\xspace}}
+	\newcommand{\waqar}[1]{{\textcolor{blue}{Waqar: #1}\xspace}}
+	\newcommand{\rifat}[1]{{\textcolor{violet}{Rifat: #1}\xspace}}
+	\newcommand{\harsha}[1]{{\textcolor{orange}{Harsha: #1}\xspace}}
+	\newcommand{\arif}[1]{{\textcolor{orange}{Arif: #1}\xspace}}
+	\newcommand{\mojtaba}[1]{{\textcolor{red}{#1}\xspace}}
+	\newcommand{\gillian}[1]{{\textcolor{olive}{Gillian: #1}\xspace}}
+	\newcommand{\michel}[1]{{\textcolor{red}{Michel: #1}\xspace}}
+ }
+ {
+ 	\newcommand{\idea}[1]{}
+ 	\newcommand{\todo}[1]{}
+ 	\newcommand{\jon}[1]{}
+ 	\newcommand{\waqar}[1]{}
+ 	\newcommand{\rifat}[1]{}
+ 	\newcommand{\harsha}[1]{}
+ 	\newcommand{\arif}[1]{}
+ 	\newcommand{\gillian}[1]{}
+ 	\newcommand{\michel}[1]{}
+ }
